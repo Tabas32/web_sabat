@@ -1,5 +1,5 @@
 baseurl = "http://www.example.com"
-title = "johndoe"
+title = "Sabat"
 theme = "hugo-coder"
 languagecode = "en"
 defaultcontentlanguage = "en"
@@ -14,16 +14,16 @@ pygmentscodefencesguesssyntax = true
 disqusShortname = "yourdiscussshortname"
 
 [params]
-    author = "John Doe"
-    info = "Full Stack DevOps and Magician"
-    description = "John Doe's personal website"
+    author = "Marián Sabat"
+    info = "Student of Informatics"
+    description = "This is my personal website"
     keywords = "blog,developer,personal"
-    avatarurl = "images/avatar.jpg"
+    avatarurl = "images/wolf_head.png"
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+    favicon_32 = "images/favicon-32x32.png"
+    favicon_16 = "images/favicon-16x16.png"
 
-    footercontent = "Enter a text here."
+    footercontent = "Contact me at marian.sabat@gmail.com"
 
     hidecredits = false
     hidecopyright = false
@@ -38,24 +38,28 @@ disqusShortname = "yourdiscussshortname"
     name = "Github"
     icon = "fab fa-github fa-2x"
     weight = 1
-    url = "https://github.com/johndoe/"
+    url = "https://github.com/Tabas32/"
 [[params.social]]
-    name = "Gitlab"
-    icon = "fab fa-gitlab fa-2x"
+    name = "Linkedin"
+    icon = "fab fa-linkedin fa-2x"
     weight = 2
-    url = "https://gitlab.com/johndoe/"
+    url = "https://www.linkedin.com/in/marián-sabat-99551017a/"
 [[params.social]]
-    name = "Twitter"
-    icon = "fab fa-twitter fa-2x"
+    name = "Facebook"
+    icon = "fab fa-facebook fa-2x"
     weight = 3
-    url = "https://twitter.com/johndoe/"
+    url = "https://www.facebook.com/marian.sabat.9"
 
 # Menu links
 [[menu.main]]
-    name = "Blog"
-    weight = 1
-    url  = "/posts/"
-[[menu.main]]
     name = "About"
-    weight = 2
+    weight = 1
     url = "/about/"
+[[menu.main]]
+    name = "Projects"
+    weight = 2
+    url = "/projects/"
+[[menu.main]]
+    name = "Blog"
+    weight = 3
+    url  = "/posts/"
