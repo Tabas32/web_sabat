@@ -15,7 +15,7 @@ disqusShortname = "yourdiscussshortname"
 
 [params]
     author = "Marián Sabat"
-    info = "Student of Informatics"
+    info = "Starting programmer"
     description = "This is my personal website"
     keywords = "blog,developer,personal"
     avatarurl = "images/wolf_head.png"
