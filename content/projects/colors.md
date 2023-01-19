@@ -1,8 +1,10 @@
 ---
 title: "ColorMaster"
 date: 2019-10-06T22:09:53+02:00
-draft: true
+draft: false
 ---
+Codes: [Github](https://github.com/Tabas32/colors) \\
+Download: [UlozTo](https://uloz.to/file/yY4PDuh4pjuW/colors-exe)
 
 **ColorMaster** is two player 2D game.
 Your objective is to reach control over game board.
@@ -13,7 +15,7 @@ Player that controls 50% of all blocks is winner.
 <img src="/static/cmaster1.png" alt="CopyMaster menu" width="600"/>
 
 Game is build in GameMaker game engine.
-Aldought GameMaker allows you to create games without writing code, this is not the case.
+Although GameMaker allows you to create games without writing code, this is not the case.
 In the background, it uses algorithm for finding shortest route.
 Simplest way to implement this game would be to create object for every block.
 However this approach wastes lot of resources.
