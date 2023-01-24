@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Marian Sabat on Sabat</title><link>https://tabas32.github.io/web_sabat/authors/marian-sabat/</link><description>Recent content in Marian Sabat on Sabat</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 24 Jan 2023 21:55:57 +0100</lastBuildDate><atom:link href="https://tabas32.github.io/web_sabat/authors/marian-sabat/index.xml" rel="self" type="application/rss+xml"/><item><title>How to set up simple website with hugo</title><link>https://tabas32.github.io/web_sabat/posts/create-web-page/</link><pubDate>Tue, 24 Jan 2023 21:55:57 +0100</pubDate><guid>https://tabas32.github.io/web_sabat/posts/create-web-page/</guid><description>install hugo on arch sudo pacman -S hugo on mint sudo snap install hugo check installed arch: hugo version mint: snap run hugo version create new project hugo new site temp cd temp git init get theme from: https://github.com/luizdepra/hugo-coder
+git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder update config.toml with minimal template from ^
+comment customCSS, customSCSS, customJS (this is throwing error)
+run website
+hugo server
+customize to my needs
+new content</description></item></channel></rss>
