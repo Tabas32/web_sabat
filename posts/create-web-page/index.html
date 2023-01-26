@@ -3,14 +3,52 @@
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/web_sabat/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/projects/>Projects</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tabas32.github.io/web_sabat/posts/create-web-page/>How to set up simple website with hugo</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2023-01-24T21:55:57+01:00>January 24, 2023</time></span>
 <span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
-One-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
+3-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
 <a href=/web_sabat/authors/marian-sabat/>Marian Sabat</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
-<span class=tag><a href=/web_sabat/tags/web/>web</a></span></div></div></header><div class=post-content><ol><li>install hugo</li></ol><ul><li>on arch <code>sudo pacman -S hugo</code></li><li>on mint <code>sudo snap install hugo</code></li></ul><ol start=2><li>check installed</li></ol><ul><li>arch: <code>hugo version</code></li><li>mint: <code>snap run hugo version</code></li></ul><ol start=3><li>create new project</li></ol><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>hugo new site temp
-</span></span><span style=display:flex><span>cd temp
+<span class=tag><a href=/web_sabat/tags/web/>web</a></span></div></div></header><div class=post-content><p>Here is the problem, I want a website where I can put what ever I want.
+I could write it from scratch but I don&rsquo;t have time nor desire to do that.
+Not to mention that my design and css skill is abysmal.
+So obvious answer is to use some tool that will create web for you. One
+of such tools is Hugo.</p><p>This is step by step how have I created this website.</p><h2 id=1-install-hugo>1. Install Hugo
+<a class=heading-link href=#1-install-hugo><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>I have two computers, both are running linux. My main pc is running Manjaro
+and other one has Mint. Installing Hugo on Manjaro was very simple. Just run
+<code>sudo pacman -S hugo</code>. As it turns out, Hugo package available on Mint is
+very old and doesn&rsquo;t fulfill my needs. But I&rsquo;ve found better one on snap.
+So I&rsquo;ve installed Hugo on Mint with <code>sudo snap install hugo</code>. Because
+this is a snap package, every Hugo command needs to be preceded with
+<code>snap run</code>. I won&rsquo;t be writing it everywhere, just know that on Mint I had to
+run it through snap (i.e. <code>snap run hugo ...</code>).</p><p>After installing you can check that everything is ok by checking installed
+version <code>hugo version</code>.</p><h2 id=2-create-new-project>2. Create new project
+<a class=heading-link href=#2-create-new-project><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Now to the fun part, creating project. To do that simply run</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>hugo new site myWeb
+</span></span><span style=display:flex><span>cd myWeb
 </span></span><span style=display:flex><span>git init
-</span></span></code></pre></div><ol start=4><li>get theme
-from: <a href=https://github.com/luizdepra/hugo-coder>https://github.com/luizdepra/hugo-coder</a><br><code>git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code></li></ol><p>update config.toml with minimal template from ^<br>comment customCSS, customSCSS, customJS (this is throwing error)</p><ol start=5><li><p>run website<br><code>hugo server</code></p></li><li><p>customize to my needs</p></li><li><p>new content<br><code>hugo new about.md</code><br><code>hugo new posts/first_post.md</code></p></li><li><p>deploy in github pages
-tbd (treba nastavit github actions a zmenit settings v githube)</p></li></ol></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
+</span></span></code></pre></div><p>This will create new hugo project for you and set up git repository.</p><h2 id=3-get-theme>3. Get theme
+<a class=heading-link href=#3-get-theme><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>However, site is still unusable. What you need is hugo theme. I will not
+be going over how to create your custom theme. I might write article
+about it in future. But for start you can use any already existing theme.
+There are tousands out there just search for one. I found one that
+I like, <a href=https://github.com/luizdepra/hugo-coder>hugo-coder</a>. So add it
+to <code>themes</code> directory in your project (just folow instructions in github).
+You can do it with</p><p><code>git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder</code></p><p>Other thing is to configure it. You need to update file <code>config.toml</code>.
+Just use example from their <a href=https://github.com/luizdepra/hugo-coder/blob/main/docs/configurations.md#complete-example>documentation</a>.</p><h2 id=4-run-website>4. Run website
+<a class=heading-link href=#4-run-website><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Now you are ready to run everything. Hugo comes with server build in, so
+you can easily try that everything works as it should. Use command</p><p><code>hugo server</code></p><p>This will run server with your website. Also it is looking for any changes,
+so when you will be updating any file, after save all changes will be rendered
+in real time.</p><h2 id=5-adding-content>5. Adding content
+<a class=heading-link href=#5-adding-content><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Contents of your website should be stored to <code>content</code> directory. That include
+all page content like text. To create new page, you can use <code>hugo new</code>
+with path to new file that will be created. E.g. if you want to create new blog
+post you can do <code>hugo new posts/first_post.md</code>. This will create new
+markdown file under <code>content/posts/</code> with name <code>first_post.md</code>. You can edit
+this file and you should see new article appear on you site under Blog.</p><h2 id=6-deploy-in-github-pages>6. deploy in github pages
+<a class=heading-link href=#6-deploy-in-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><pre><code>tbd (treba nastavit github actions a zmenit settings v githube)
+</code></pre></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
 2023
 Marián Sabat
 ·
