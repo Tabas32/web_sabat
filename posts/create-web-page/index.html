@@ -45,8 +45,8 @@ all page content like text. To create new page, you can use <code>hugo new</code
 with path to new file that will be created. E.g. if you want to create new blog
 post you can do <code>hugo new posts/first_post.md</code>. This will create new
 markdown file under <code>content/posts/</code> with name <code>first_post.md</code>. You can edit
-this file and you should see new article appear on you site under Blog.</p><h2 id=6-deploy-in-github-pages>6. deploy in github pages
-<a class=heading-link href=#6-deploy-in-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+this file and you should see new article appear on you site under Blog.</p><h2 id=6-go-public-with-github-pages>6. Go public with github pages
+<a class=heading-link href=#6-go-public-with-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Last thing is to set up github action to automaticaly deploy newest version
 of page when pushing to remote repository on main branch.</p><p>Inside project root directory create new directory <code>.github/workflows</code>.
 And create new file that will reside in this directory. Name it <code>gh-pages.yml</code>.</p><p>Content:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>name: github pages
@@ -83,7 +83,7 @@ And create new file that will reside in this directory. Name it <code>gh-pages.y
 </span></span><span style=display:flex><span>          publish_dir: ./public
 </span></span></code></pre></div><p>This action will deploy contents of <code>pulic</code> directory into branch <code>gh-pages</code>.
 So for everything to work correctly, make sure that in setting under &lsquo;Pages&rsquo;
-there is set up branch for build and deployment as <code>gh-pages</code>.</p></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
+there is set up branch for build and deployment as <code>gh-pages</code>.</p><p>Before pushing to remote, don&rsquo;t forget to run command <code>hugo</code>.</p></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
 2023
 Marián Sabat
 ·
