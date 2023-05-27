@@ -1,0 +1,119 @@
+<!doctype html><html lang=en><head><title>My chess program post mortem · Sabat</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Marián Sabat"><meta name=description content="Retrospecitve on my first C++ program"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="My chess program post mortem"><meta name=twitter:description content="Retrospecitve on my first C++ program"><meta property="og:title" content="My chess program post mortem"><meta property="og:description" content="Retrospecitve on my first C++ program"><meta property="og:type" content="article"><meta property="og:url" content="https://tabas32.github.io/web_sabat/posts/chess_retrospective/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-05-25T22:22:26+02:00"><meta property="article:modified_time" content="2023-05-25T22:22:26+02:00"><link rel=canonical href=https://tabas32.github.io/web_sabat/posts/chess_retrospective/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/web_sabat/css/coder.min.36f76aaf39a14ecf5c3a3c6250dcaf06c238b3d8365d17d646f95cb1874e852b.css integrity="sha256-NvdqrzmhTs9cOjxiUNyvBsI4s9g2XRfWRvlcsYdOhSs=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.112.3"></head><body class="preload-transitions colorscheme-light"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/web_sabat>Sabat</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/web_sabat/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/projects/>Projects</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tabas32.github.io/web_sabat/posts/chess_retrospective/>My chess program post mortem</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2023-05-25T22:22:26+02:00>May 25, 2023</time></span>
+<span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+6-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
+<a href=/web_sabat/authors/marian-sabat/>Marian Sabat</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/web_sabat/tags/cpp/>cpp</a></span></div></div></header><div class=post-content><p>Ok, I would be lying if I said that this is my first-ever program
+written in C++. But I will be counting this one as first.</p><p>So what is this program about? I wanted to make a simple chess game
+so I can learn C++. Of course, at the beginning, I overestimated
+my knowledge. But let&rsquo;s start from the start.</p><h2 id=what-i-wanted-to-do>What I wanted to do
+<a class=heading-link href=#what-i-wanted-to-do><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Initially, I wanted to create a fully working chess game in the
+terminal. The user would be using official chess notation to make
+moves. The game would be playable against the computer or as
+multiplayer.</p><h2 id=what-ive-actually-done>What I&rsquo;ve actually done
+<a class=heading-link href=#what-ive-actually-done><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Frankly, the game is not done, but I am not planning to finish it.
+At the current state, the chessboard is displayed, and the user can
+provide input in the form of specifying from which position to move
+where. There is no game loop, nor winning condition. Forget playing
+against the computer. Actually, not all moves can be performed, like
+castling. But if you would want to play against someone, you could,
+even if only in a smaller ruleset.</p><p>Look, if I showed it to someone, they would recognize it as a chess.
+I made it with very limited knowledge of C++, so I call it an absolute
+win.</p><h2 id=code>Code
+<a class=heading-link href=#code><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>The code for this program can be found on my GitHub:
+<a href=https://github.com/Tabas32/chess_cpp>https://github.com/Tabas32/chess_cpp</a></p><p><img src=/web_sabat/images/chess_retrospective/cpp_chess.png alt="Chess game"></p><p>To build the project, I&rsquo;ve used CMake. Of course, I wanted to do some
+testing, so for unit tests, I&rsquo;ve used GTest.</p><p>At the beginning, I had some ideas about how I wanted to create this
+game. The code is separated into two modules: one for the game
+implementation without any output, and the user interface module.
+In the end, I ended up with the following structure:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>src
+</span></span><span style=display:flex><span>├── gameCore/
+</span></span><span style=display:flex><span>│   ├── enums/
+</span></span><span style=display:flex><span>│   │   ├── Color.hpp
+</span></span><span style=display:flex><span>│   │   └── PieceType.hpp
+</span></span><span style=display:flex><span>│   ├── pieces/
+</span></span><span style=display:flex><span>│   │   ├── Bishop.cpp
+</span></span><span style=display:flex><span>│   │   ├── Bishop.hpp
+</span></span><span style=display:flex><span>│   │   ├── King.cpp
+</span></span><span style=display:flex><span>│   │   ├── King.hpp
+</span></span><span style=display:flex><span>│   │   ├── Knight.cpp
+</span></span><span style=display:flex><span>│   │   ├── Knight.hpp
+</span></span><span style=display:flex><span>│   │   ├── Pawn.cpp
+</span></span><span style=display:flex><span>│   │   ├── Pawn.hpp
+</span></span><span style=display:flex><span>│   │   ├── Piece.cpp
+</span></span><span style=display:flex><span>│   │   ├── Piece.hpp
+</span></span><span style=display:flex><span>│   │   ├── PieceMovement.cpp
+</span></span><span style=display:flex><span>│   │   ├── PieceMovement.hpp
+</span></span><span style=display:flex><span>│   │   ├── Queen.cpp
+</span></span><span style=display:flex><span>│   │   ├── Queen.hpp
+</span></span><span style=display:flex><span>│   │   ├── Rook.cpp
+</span></span><span style=display:flex><span>│   │   └── Rook.hpp
+</span></span><span style=display:flex><span>│   ├── Board.cpp
+</span></span><span style=display:flex><span>│   ├── Board.hpp
+</span></span><span style=display:flex><span>│   ├── Chess_game.cpp
+</span></span><span style=display:flex><span>│   └── Chess_game.hpp
+</span></span><span style=display:flex><span>├── tui/
+</span></span><span style=display:flex><span>│   ├── BoardBuilder.cpp
+</span></span><span style=display:flex><span>│   └── BoardBuilder.hpp
+</span></span><span style=display:flex><span>└── main.cpp
+</span></span></code></pre></div><p>From a logical standpoint, I made a Piece class, and every type of
+piece then inherited from it. Each piece overrode the move method of
+Piece with its custom movement pattern. All pieces were instantiated
+inside the play method of the Chess_game class. Then the pieces were
+passed as input to the Board. The Board was actually driving all
+movements, as it had a reference to all pieces. From this, we got
+this weird chain where to make a move, you ask the Board to do it,
+and the Board would ask the Piece at the specified position for
+moves that it can perform. You probably can guess that the piece
+required a reference to the board, as by itself, it is clueless
+about other pieces.</p><p>For the terminal interface, I have used the ftxui library because I
+was lazy to come up with something myself.</p><h2 id=so-what-can-i-take-from-all-this>So, what can I take from all this
+<a class=heading-link href=#so-what-can-i-take-from-all-this><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>I have realized that I know much less than I thought initially.
+First of all, in the beginning, I made plans, and during
+implementation, I quickly abandoned those plans and took lots of
+shortcuts.</p><p>I have no idea how CMake works. I was fighting with it the whole
+time. But in the end, I must say it would have been even harder
+without it. I tried to use a simple Makefile at the beginning, but
+after the files started piling up, I was lost.</p><p>Working with GTest was fine. I was able to create unit tests for the
+movements of all pieces. Thanks for that. At least I could be
+somewhat sure that it was working. However, after that, my testing
+practice had ended. Mostly, I must say that I don&rsquo;t like adding new
+files because then I have to touch CMake again.</p><p>The next thing is my environment. I&rsquo;m using Neovim to code, with LSP.
+I love the Vim editor. However, I miss that no one is holding my
+hand. Clangd was always broken, and the errors that it showed were
+a pain to decipher. But I think I can make it work; I just need to
+get used to it more and actually learn the C++ language. Another
+thing is a debugger. As of right now, I don&rsquo;t have anything set up
+that I would be comfortable working with. I used GDB a little bit,
+but again, for me to be able to use it, I need to play with CMake
+to enable it. It would be great to have some more graphical tool
+for debugging.</p><p>The last thing I need to mention is that my C++ knowledge is abysmal.
+I had a huge trouble creating header files and including them
+throughout all the files. I strayed away from using references and
+pointers. I remember that when I was using C, pointers were a normal
+thing to use for me. But here, somehow, I struggle a lot and confuse
+pointers and references. I keep using pointers over references as
+they make more sense to me.</p><p>At one point, I totally forgot that I need to keep track of memory.
+I instantiated my objects in one method and passed them back in a
+vector. Then I tried to access those objects, and guess what?
+Segfault. As I went out of scope, my stack got cleared, and all my
+objects were gone. Such a dumb mistake.</p><p>I think that a lot of my issues would be gone if I didn&rsquo;t look at it
+as Java or Kotlin code. My first instinct is to create a class for
+everything. That is probably not true for C++. More so at the
+beginning, but very often, I found myself frustrated that there is
+no function that would do something that I needed. I&rsquo;m very used to
+functional style of programming, and getting used to the fact that I
+need to write everything myself was harder than I expected. I tried
+multiple coding styles that I got recommended from somewhere. Really
+bad idea. I should have used what I&rsquo;m comfortable with from the
+beginning. It would prevent a lot of rewriting.</p><p>So this is what I need to focus on:</p><ul><li>Learn CMake.</li><li>Learn to use a debugger.</li><li>Study some real C++ code and look for how they are using header
+files and class structures.</li><li>Learn more about pointers and references.</li><li>Learn more about const.</li></ul></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
+2023
+Marián Sabat
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/web_sabat/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
