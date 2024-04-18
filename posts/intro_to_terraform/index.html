@@ -1,0 +1,81 @@
+<!doctype html><html lang=en><head><title>Introduction to Terraform · Sabat
+</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Marián Sabat"><meta name=description content="How to install and run Terraform with AWS"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="Introduction to Terraform"><meta name=twitter:description content="How to install and run Terraform with AWS"><meta property="og:url" content="https://tabas32.github.io/web_sabat/posts/intro_to_terraform/"><meta property="og:site_name" content="Sabat"><meta property="og:title" content="Introduction to Terraform"><meta property="og:description" content="How to install and run Terraform with AWS"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2024-04-18T13:49:36+02:00"><meta property="article:modified_time" content="2024-04-18T13:49:36+02:00"><meta property="article:tag" content="Devops"><link rel=canonical href=https://tabas32.github.io/web_sabat/posts/intro_to_terraform/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/web_sabat/css/coder.min.36f76aaf39a14ecf5c3a3c6250dcaf06c238b3d8365d17d646f95cb1874e852b.css integrity="sha256-NvdqrzmhTs9cOjxiUNyvBsI4s9g2XRfWRvlcsYdOhSs=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.125.1"></head><body class="preload-transitions colorscheme-light"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/web_sabat>Sabat
+</a><input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/web_sabat/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/projects/>Projects</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tabas32.github.io/web_sabat/posts/intro_to_terraform/>Introduction to Terraform</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
+<time datetime=2024-04-18T13:49:36+02:00>April 18, 2024
+</time></span><span class=reading-time><i class="fa fa-clock-o" aria-hidden=true></i>
+4-minute read</span></div><div class=authors><i class="fa fa-user" aria-hidden=true></i>
+<a href=/web_sabat/authors/marian-sabat/>Marian Sabat</a></div><div class=tags><i class="fa fa-tag" aria-hidden=true></i>
+<span class=tag><a href=/web_sabat/tags/devops/>Devops</a></span></div></div></header><div class=post-content><p>Terraform is tool for managing infrastructure. IaC or &lsquo;Infrastructure as
+a code&rsquo; is process of managing you infrastrucutre with set of tools and human
+readable files instead of manually setting it in configuration tools.</p><h2 id=installation>Installation
+<a class=heading-link href=#installation><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>To use Terraform you need to install it. All necessary infromation can be
+found at <a href=https://www.terraform.io/>official website</a>. On linux machines
+use package manager</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>sudo pacman -S terraform
+</span></span></code></pre></div><p>If everything was installed correctly you can check it with</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>terraform -help
+</span></span></code></pre></div><p>Current latest version is <code>1.8.0</code>. I will be using <code>1.7.4</code>.</p><h2 id=managing-aws>Managing AWS
+<a class=heading-link href=#managing-aws><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>To use Terraform for managing AWS infrastructure you will need AWS CLI
+installed.</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>sudo pacman -S aws-cli-v2
+</span></span></code></pre></div><p>I will be using version <code>2.15.19</code>, you can check your version with</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>aws --version
+</span></span></code></pre></div><p>Latest version is <code>2.15.39</code>.</p><h3 id=credentials-for-aws>Credentials for AWS
+<a class=heading-link href=#credentials-for-aws><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h3><p>After installation before we can use AWS CLI with terraform we need to set
+up credentials, that will point CLI to correct AWS account and region.</p><p>First create new IAM user.</p><ol><li>Log in to your AWS account</li><li>In management console search for <code>IAM</code> service</li><li>In left menu select <code>users</code></li><li>Press <code>Create user</code><ol><li>Fill in user name</li><li>Select &lsquo;Provide user access to the AWS Management Console&rsquo;</li><li>Select &lsquo;I want to create IAM user&rsquo;</li></ol></li><li><code>Next</code></li><li>Select <code>Attach policies directly</code><ol><li>Under &lsquo;Permissions policies&rsquo; select <code>AdministratorAccess</code></li></ol></li><li><code>Next</code></li><li><code>Create user</code> (You can log in and change default password)</li><li>Open details of your newly create user and switch to tab <code>Security credentials</code></li><li>Under &lsquo;Access keys&rsquo; press <code>Create access key</code></li><li>Select <code>CLI</code> and confirmation box a proccede with <code>Next</code></li><li>Fill in description and <code>Create access key</code></li><li>Save your new access key to some place and <code>Done</code></li></ol><p>Now you need to provide these credentials to your AWS CLI. You can do it by
+setting up environment variables</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-gdscript3 data-lang=gdscript3><span style=display:flex><span><span style=font-weight:700>export</span> AWS_ACCESS_KEY_ID=&lt;your access key id&gt;
+</span></span><span style=display:flex><span><span style=font-weight:700>export</span> AWS_SECRET_ACCESS_KEY=&lt;your secret access key&gt;
+</span></span></code></pre></div><h2 id=creating-terraform-repository>Creating Terraform repository
+<a class=heading-link href=#creating-terraform-repository><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
+<span class=sr-only>Link to heading</span></a></h2><p>Now when you have set up all dependencies you should be able to create basic
+terraform project and create EC2 instance with it.</p><p>Create new directory</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>mkdir terraform-aws-instance
+</span></span><span style=display:flex><span>cd terraform-aws-instance
+</span></span></code></pre></div><p>Create new file with name <code>main.tf</code> and write configuration as</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>terraform {
+</span></span><span style=display:flex><span>  required_providers {
+</span></span><span style=display:flex><span>    aws = {
+</span></span><span style=display:flex><span>      source  = &#34;hashicorp/aws&#34;
+</span></span><span style=display:flex><span>      version = &#34;~&gt; 4.16&#34;
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  required_version = &#34;&gt;= 1.2.0&#34;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>provider &#34;aws&#34; {
+</span></span><span style=display:flex><span>  region = &#34;eu-north-1&#34;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>resource &#34;aws_instance&#34; &#34;app_server&#34; {
+</span></span><span style=display:flex><span>  ami           = &#34;ami-0d74f1e79c38f2933&#34;
+</span></span><span style=display:flex><span>  instance_type = &#34;t3.micro&#34;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  tags = {
+</span></span><span style=display:flex><span>    Name = &#34;ExampleAppServerInstance&#34;
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></div><p>Terraform block contains settings for terraform including required providers.
+Terraform providers are by default downloaded from
+<a href=https://registry.terraform.io/>registry</a>. Provider block is used for
+configuring specified provider, in this case it is <code>aws</code>. Resource block
+serve for defining components of infrastrucuture. It can be logical like
+application or physical like sevice instance. Resource blocks are specified
+by resource type (<code>aws_instance</code>) and name (<code>app_server</code>). Inside of resource
+block are specified arguments for configurating this resource.</p><p>After your code is written you can procede with creating actual EC2 instance.
+First initialize terraform repo</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>terraform init
+</span></span></code></pre></div><p>You can formate your code with <code>terraform fmt</code> and validate it with
+<code>terraform validate</code>. If you only want to see what changes will be performed
+by terraform you can use <code>terraform plan</code>.</p><p>To apply you configuration use</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>terraform apply
+</span></span></code></pre></div><p>This will show you what actions will be performed and it will ask you for
+confirmation, type <code>yes</code>. Creation of your resources can take some time.
+After everything is created, you will be able to find your new instance in
+AWS. So go to your management console and under EC2 instances you will be
+able to find running instace with name <code>ExampleAppServerInstance</code>.</p><p><code>apply</code> command will create file <code>terraform.tfstate</code>, which stores IDs and
+properties of your resources. It is only way how terraform can track your
+infrastructure. It can contain sensitive information, so be sure to store
+it in safe way.</p><p>To check resources in your state you can use <code>terraform state list</code>.</p><p>That is all. In this article we have installed terraform, set up AWS CLI
+and used terraform to create new EC2 instance for us.</p></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
+2023 -
+2024
+Marián Sabat
+·
+Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/web_sabat/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
