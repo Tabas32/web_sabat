@@ -1,6 +1,125 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sabat</title><link>https://tabas32.github.io/web_sabat/</link><description>Recent content on Sabat</description><generator>Hugo 0.125.1</generator><language>en</language><lastBuildDate>Thu, 18 Apr 2024 13:49:36 +0200</lastBuildDate><atom:link href="https://tabas32.github.io/web_sabat/index.xml" rel="self" type="application/rss+xml"/><item><title>Introduction to Terraform</title><link>https://tabas32.github.io/web_sabat/posts/intro_to_terraform/</link><pubDate>Thu, 18 Apr 2024 13:49:36 +0200</pubDate><guid>https://tabas32.github.io/web_sabat/posts/intro_to_terraform/</guid><description>Terraform is tool for managing infrastructure. IaC or &amp;lsquo;Infrastructure as a code&amp;rsquo; is process of managing you infrastrucutre with set of tools and human readable files instead of manually setting it in configuration tools.
-Installation Link to heading To use Terraform you need to install it. All necessary infromation can be found at official website. On linux machines use package manager
-sudo pacman -S terraform If everything was installed correctly you can check it with</description></item><item><title>My chess program post mortem</title><link>https://tabas32.github.io/web_sabat/posts/chess_retrospective/</link><pubDate>Thu, 25 May 2023 22:22:26 +0200</pubDate><guid>https://tabas32.github.io/web_sabat/posts/chess_retrospective/</guid><description>Ok, I would be lying if I said that this is my first-ever program written in C++. But I will be counting this one as first.
-So what is this program about? I wanted to make a simple chess game so I can learn C++. Of course, at the beginning, I overestimated my knowledge. But let&amp;rsquo;s start from the start.
-What I wanted to do Link to heading Initially, I wanted to create a fully working chess game in the terminal.</description></item><item><title>How to set up simple website with hugo</title><link>https://tabas32.github.io/web_sabat/posts/create-web-page/</link><pubDate>Tue, 24 Jan 2023 21:55:57 +0100</pubDate><guid>https://tabas32.github.io/web_sabat/posts/create-web-page/</guid><description>Here is the problem, I want a website where I can put what ever I want. I could write it from scratch but I don&amp;rsquo;t have time nor desire to do that. Not to mention that my design and css skill is abysmal. So obvious answer is to use some tool that will create web for you. One of such tools is Hugo.
-This is step by step how have I created this website.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Sabat</title><link>https://tabas32.github.io/web_sabat/</link><description>Recent content on Sabat</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 31 Jul 2025 21:19:36 +0200</lastBuildDate><atom:link href="https://tabas32.github.io/web_sabat/index.xml" rel="self" type="application/rss+xml"/><item><title>Notes from learning golang</title><link>https://tabas32.github.io/web_sabat/posts/learning_golang/</link><pubDate>Thu, 31 Jul 2025 21:19:36 +0200</pubDate><guid>https://tabas32.github.io/web_sabat/posts/learning_golang/</guid><description>&lt;h2 id="project">
+ Project
+ &lt;a class="heading-link" href="#project">
+ &lt;i class="fa fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>To create module (go.mod) run &lt;code>go mod init &amp;lt;name&amp;gt;&lt;/code>&lt;br>
+To get dependencies to project run &lt;code>go mod tidy&lt;/code>&lt;br>
+To install (download) package run &lt;code>go install &amp;lt;package&amp;gt;@latest&lt;/code> or any version&lt;/p>
+&lt;p>Search packages at &amp;lsquo;&lt;a href="https://pkg.go.dev/'">https://pkg.go.dev/'&lt;/a>&lt;/p>
+&lt;p>compilation: &lt;code>go build -o output/path/app src/&lt;/code>&lt;/p>
+&lt;h2 id="switch">
+ Switch
+ &lt;a class="heading-link" href="#switch">
+ &lt;i class="fa fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> &lt;span style="color:#66d9ef">int8&lt;/span> = &lt;span style="color:#ae81ff">25&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// switch with input variable&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">switch&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;A is 10&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;A is 20&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">default&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;A is something else&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// switch that can use any bool statements as case&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">switch&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> &amp;gt; &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;A is more than 10&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#a6e22e">A&lt;/span> &lt;span style="color:#f92672">&amp;lt;=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;A is less than 10&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">// switch with 2 expresions as input&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">switch&lt;/span> &lt;span style="color:#a6e22e">B&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#ae81ff">30&lt;/span>; &lt;span style="color:#a6e22e">B&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;B is 10&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">case&lt;/span> &lt;span style="color:#ae81ff">20&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;B is 20&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="http-client">
+ Http client
+ &lt;a class="heading-link" href="#http-client">
+ &lt;i class="fa fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> (
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;net/http&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;time&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;fmt&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#e6db74">&amp;#34;io&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">func&lt;/span> &lt;span style="color:#a6e22e">TestHttpClient&lt;/span>() {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Create client&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">client&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">Client&lt;/span> { &lt;span style="color:#a6e22e">Timeout&lt;/span>: &lt;span style="color:#a6e22e">time&lt;/span>.&lt;span style="color:#a6e22e">Second&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Create request&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">req&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">http&lt;/span>.&lt;span style="color:#a6e22e">NewRequest&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;GET&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;http://www.google.com&amp;#34;&lt;/span>, &lt;span style="color:#66d9ef">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Error creating request&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Call request&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">response&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">client&lt;/span>.&lt;span style="color:#a6e22e">Do&lt;/span>(&lt;span style="color:#a6e22e">req&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Error sending request&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// You need to close Body, otherwise connections stay open&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">defer&lt;/span> &lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">Body&lt;/span>.&lt;span style="color:#a6e22e">Close&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e">// Read body&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">body&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> &lt;span style="color:#a6e22e">io&lt;/span>.&lt;span style="color:#a6e22e">ReadAll&lt;/span>(&lt;span style="color:#a6e22e">response&lt;/span>.&lt;span style="color:#a6e22e">Body&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#a6e22e">err&lt;/span> &lt;span style="color:#f92672">!=&lt;/span> &lt;span style="color:#66d9ef">nil&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>		&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;Error reading body&amp;#34;&lt;/span>, &lt;span style="color:#a6e22e">err&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#a6e22e">body&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Introduction to Terraform</title><link>https://tabas32.github.io/web_sabat/posts/intro_to_terraform/</link><pubDate>Thu, 18 Apr 2024 13:49:36 +0200</pubDate><guid>https://tabas32.github.io/web_sabat/posts/intro_to_terraform/</guid><description>&lt;p>Terraform is tool for managing infrastructure. IaC or &amp;lsquo;Infrastructure as
+a code&amp;rsquo; is process of managing you infrastrucutre with set of tools and human
+readable files instead of manually setting it in configuration tools.&lt;/p>
+&lt;h2 id="installation">
+ Installation
+ &lt;a class="heading-link" href="#installation">
+ &lt;i class="fa fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>To use Terraform you need to install it. All necessary infromation can be
+found at &lt;a href="https://www.terraform.io/">official website&lt;/a>. On linux machines
+use package manager&lt;/p>
+&lt;pre tabindex="0">&lt;code>sudo pacman -S terraform
+&lt;/code>&lt;/pre>&lt;p>If everything was installed correctly you can check it with&lt;/p></description></item><item><title>My chess program post mortem</title><link>https://tabas32.github.io/web_sabat/posts/chess_retrospective/</link><pubDate>Thu, 25 May 2023 22:22:26 +0200</pubDate><guid>https://tabas32.github.io/web_sabat/posts/chess_retrospective/</guid><description>&lt;p>Ok, I would be lying if I said that this is my first-ever program
+written in C++. But I will be counting this one as first.&lt;/p>
+&lt;p>So what is this program about? I wanted to make a simple chess game
+so I can learn C++. Of course, at the beginning, I overestimated
+my knowledge. But let&amp;rsquo;s start from the start.&lt;/p>
+&lt;h2 id="what-i-wanted-to-do">
+ What I wanted to do
+ &lt;a class="heading-link" href="#what-i-wanted-to-do">
+ &lt;i class="fa fa-link" aria-hidden="true" title="Link to heading">&lt;/i>
+ &lt;span class="sr-only">Link to heading&lt;/span>
+ &lt;/a>
+&lt;/h2>
+&lt;p>Initially, I wanted to create a fully working chess game in the
+terminal. The user would be using official chess notation to make
+moves. The game would be playable against the computer or as
+multiplayer.&lt;/p></description></item><item><title>How to set up simple website with hugo</title><link>https://tabas32.github.io/web_sabat/posts/create-web-page/</link><pubDate>Tue, 24 Jan 2023 21:55:57 +0100</pubDate><guid>https://tabas32.github.io/web_sabat/posts/create-web-page/</guid><description>&lt;p>Here is the problem, I want a website where I can put what ever I want.
+I could write it from scratch but I don&amp;rsquo;t have time nor desire to do that.
+Not to mention that my design and css skill is abysmal.
+So obvious answer is to use some tool that will create web for you. One
+of such tools is Hugo.&lt;/p>
+&lt;p>This is step by step how have I created this website.&lt;/p></description></item></channel></rss>

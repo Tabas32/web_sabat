@@ -1,5 +1,4 @@
-<!doctype html><html lang=en><head><title>How to set up simple website with hugo · Sabat
-</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Marián Sabat"><meta name=description content="Description on how did I set up this website"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="How to set up simple website with hugo"><meta name=twitter:description content="Description on how did I set up this website"><meta property="og:url" content="https://tabas32.github.io/web_sabat/posts/create-web-page/"><meta property="og:site_name" content="Sabat"><meta property="og:title" content="How to set up simple website with hugo"><meta property="og:description" content="Description on how did I set up this website"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-01-24T21:55:57+01:00"><meta property="article:modified_time" content="2023-01-24T21:55:57+01:00"><meta property="article:tag" content="Web"><link rel=canonical href=https://tabas32.github.io/web_sabat/posts/create-web-page/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/web_sabat/css/coder.min.36f76aaf39a14ecf5c3a3c6250dcaf06c238b3d8365d17d646f95cb1874e852b.css integrity="sha256-NvdqrzmhTs9cOjxiUNyvBsI4s9g2XRfWRvlcsYdOhSs=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.125.1"></head><body class="preload-transitions colorscheme-light"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/web_sabat>Sabat
+<!doctype html><html lang=en><head><title>How to set up simple website with hugo · Sabat</title><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=color-scheme content="light dark"><meta name=author content="Marián Sabat"><meta name=description content="Description on how did I set up this website"><meta name=keywords content="blog,developer,personal"><meta name=twitter:card content="summary"><meta name=twitter:title content="How to set up simple website with hugo"><meta name=twitter:description content="Description on how did I set up this website"><meta property="og:url" content="https://tabas32.github.io/web_sabat/posts/create-web-page/"><meta property="og:site_name" content="Sabat"><meta property="og:title" content="How to set up simple website with hugo"><meta property="og:description" content="Description on how did I set up this website"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2023-01-24T21:55:57+01:00"><meta property="article:modified_time" content="2023-01-24T21:55:57+01:00"><meta property="article:tag" content="Web"><link rel=canonical href=https://tabas32.github.io/web_sabat/posts/create-web-page/><link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin><link rel=stylesheet href=/web_sabat/css/coder.min.570ee1e6806cbccab9ba955c71d4f6b2155a0e072727e86466c475be702b080d.css integrity="sha256-Vw7h5oBsvMq5upVccdT2shVaDgcnJ+hkZsR1vnArCA0=" crossorigin=anonymous media=screen><link rel=icon type=image/png href=/img/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/img/favicon-16x16.png sizes=16x16><link rel=apple-touch-icon href=/images/apple-touch-icon.png><link rel=apple-touch-icon sizes=180x180 href=/images/apple-touch-icon.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/images/safari-pinned-tab.svg color=#5bbad5><meta name=generator content="Hugo 0.148.2"></head><body class="preload-transitions colorscheme-light"><main class=wrapper><nav class=navigation><section class=container><a class=navigation-title href=/web_sabat>Sabat
 </a><input type=checkbox id=menu-toggle>
 <label class="menu-button float-right" for=menu-toggle><i class="fa fa-bars fa-fw" aria-hidden=true></i></label><ul class=navigation-list><li class=navigation-item><a class=navigation-link href=/web_sabat/posts/>Blog</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/about/>About</a></li><li class=navigation-item><a class=navigation-link href=/web_sabat/projects/>Projects</a></li></ul></section></nav><div class=content><section class="container post"><article><header><div class=post-title><h1 class=title><a class=title-link href=https://tabas32.github.io/web_sabat/posts/create-web-page/>How to set up simple website with hugo</a></h1></div><div class=post-meta><div class=date><span class=posted-on><i class="fa fa-calendar" aria-hidden=true></i>
 <time datetime=2023-01-24T21:55:57+01:00>January 24, 2023
@@ -22,10 +21,10 @@ this is a snap package, every Hugo command needs to be preceded with
 run it through snap (i.e. <code>snap run hugo ...</code>).</p><p>After installing you can check that everything is ok by checking installed
 version <code>hugo version</code>.</p><h2 id=2-create-new-project>2. Create new project
 <a class=heading-link href=#2-create-new-project><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
-<span class=sr-only>Link to heading</span></a></h2><p>Now to the fun part, creating project. To do that simply run</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>hugo new site myWeb
-</span></span><span style=display:flex><span>cd myWeb
-</span></span><span style=display:flex><span>git init
-</span></span></code></pre></div><p>This will create new hugo project for you and set up git repository.</p><h2 id=3-get-theme>3. Get theme
+<span class=sr-only>Link to heading</span></a></h2><p>Now to the fun part, creating project. To do that simply run</p><pre tabindex=0><code>hugo new site myWeb
+cd myWeb
+git init
+</code></pre><p>This will create new hugo project for you and set up git repository.</p><h2 id=3-get-theme>3. Get theme
 <a class=heading-link href=#3-get-theme><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>However, site is still unusable. What you need is hugo theme. I will not
 be going over how to create your custom theme. I might write article
@@ -50,43 +49,43 @@ this file and you should see new article appear on you site under Blog.</p><h2 i
 <a class=heading-link href=#6-go-public-with-github-pages><i class="fa fa-link" aria-hidden=true title="Link to heading"></i>
 <span class=sr-only>Link to heading</span></a></h2><p>Last thing is to set up github action to automaticaly deploy newest version
 of page when pushing to remote repository on main branch.</p><p>Inside project root directory create new directory <code>.github/workflows</code>.
-And create new file that will reside in this directory. Name it <code>gh-pages.yml</code>.</p><p>Content:</p><div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>name: github pages
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>on:
-</span></span><span style=display:flex><span>  push:
-</span></span><span style=display:flex><span>    branches:
-</span></span><span style=display:flex><span>      - main  # Set a branch that will trigger a deployment
-</span></span><span style=display:flex><span>  pull_request:
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>jobs:
-</span></span><span style=display:flex><span>  deploy:
-</span></span><span style=display:flex><span>    runs-on: ubuntu-22.04
-</span></span><span style=display:flex><span>    steps:
-</span></span><span style=display:flex><span>      - uses: actions/checkout@v3
-</span></span><span style=display:flex><span>        with:
-</span></span><span style=display:flex><span>          submodules: true  # Fetch Hugo themes (true OR recursive)
-</span></span><span style=display:flex><span>          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Setup Hugo
-</span></span><span style=display:flex><span>        uses: peaceiris/actions-hugo@v2
-</span></span><span style=display:flex><span>        with:
-</span></span><span style=display:flex><span>          hugo-version: &#39;latest&#39;
-</span></span><span style=display:flex><span>          # extended: true
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Build
-</span></span><span style=display:flex><span>        run: hugo --minify
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Deploy
-</span></span><span style=display:flex><span>        uses: peaceiris/actions-gh-pages@v3
-</span></span><span style=display:flex><span>        if: github.ref == &#39;refs/heads/main&#39;
-</span></span><span style=display:flex><span>        with:
-</span></span><span style=display:flex><span>          github_token: ${{ secrets.GITHUB_TOKEN }}
-</span></span><span style=display:flex><span>          publish_dir: ./public
-</span></span></code></pre></div><p>This action will deploy contents of <code>pulic</code> directory into branch <code>gh-pages</code>.
+And create new file that will reside in this directory. Name it <code>gh-pages.yml</code>.</p><p>Content:</p><pre tabindex=0><code>name: github pages
+
+on:
+  push:
+    branches:
+      - main  # Set a branch that will trigger a deployment
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: &#39;latest&#39;
+          # extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == &#39;refs/heads/main&#39;
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+</code></pre><p>This action will deploy contents of <code>pulic</code> directory into branch <code>gh-pages</code>.
 So for everything to work correctly, make sure that in setting under &lsquo;Pages&rsquo;
 there is set up branch for build and deployment as <code>gh-pages</code>.</p><p>Before pushing to remote, don&rsquo;t forget to run command <code>hugo</code>.</p></div><footer><div id=disqus_thread></div><script>window.disqus_config=function(){},function(){if(["localhost","127.0.0.1"].indexOf(window.location.hostname)!=-1){document.getElementById("disqus_thread").innerHTML="Disqus comments not available by default when the website is previewed locally.";return}var t=document,e=t.createElement("script");e.async=!0,e.src="//yourdiscussshortname.disqus.com/embed.js",e.setAttribute("data-timestamp",+new Date),(t.head||t.body).appendChild(e)}(),document.addEventListener("themeChanged",function(){document.readyState=="complete"&&DISQUS.reset({reload:!0,config:disqus_config})})</script></footer></article></section></div><footer class=footer><section class=container>©
 2023 -
-2024
+2025
 Marián Sabat
 ·
 Powered by <a href=https://gohugo.io/>Hugo</a> & <a href=https://github.com/luizdepra/hugo-coder/>Coder</a>.</section></footer></main><script src=/web_sabat/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script></body></html>
